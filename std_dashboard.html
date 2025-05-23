@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Feedback – Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-roboto min-h-screen grid grid-rows-[auto_1fr_auto]">
+
+  <header class="row-start-1 row-end-2 shadow p-4 grid-cols-2 bg-white rounded shadow">
+    <h1 class="text-xl font-bold text-indigo-900">Student Dashboard</h1>
+  </header>
+
+  <div class="row-start-2 row-end-3 grid md:grid-cols-[1fr_3fr] gap-6 p-6">
+    <!-- Sidebar -->
+    <aside class="col-start-1 bg-white rounded shadow p-4 hidden md:block">
+      <nav class="gap-4">
+
+        <!-- Profile Panel -->
+        <div class="text-center space-y-2">
+          <!-- Hidden file input -->
+          <input type="file" id="avatar-input" accept="image/*" class="hidden" onchange="previewAvatar(event)" />
+
+          <!-- Clickable Avatar Circle -->
+          <label for="avatar-input"
+            class="w-24 h-24 mx-auto rounded-full bg-gray-200 flex items-center justify-center cursor-pointer overflow-hidden">
+            <img id="avatar-img" src="" alt="Avatar" class="w-full h-full object-cover rounded-full hidden" />
+            <span class="text-gray-400">Avatar</span>
+          </label>
+
+          <!-- Username -->
+          <div>
+            <p class="font-semibold text-gray-800">John Doe</p>
+          </div>
+
+          <!-- Status -->
+          <div>
+            <span class="inline-block px-2 py-1 text-xs bg-green-100 text-green-800 rounded-full">User</span>
+          </div>
+        </div>
+
+        <a href="std_dashboard.html" class="block p-2 rounded hover:bg-gray-100">Home</a>
+        <a href="std_submit.html" class="block p-2 rounded hover:bg-gray-100">Submit Feedback</a>
+        <a href="std_history.html" class="block p-2 rounded hover:bg-gray-100">My History</a>
+        <a href="#" class="block p-2 rounded hover:bg-gray-100">Settings</a>
+        <a href="landing.html" class="block p-2 hover:bg-gray-100">Logout</a>
+      </nav>
+    </aside>
+    <!-- Main -->
+    <main class="grid gap-6">
+      <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-2xl font-semibold text-indigo-900">Welcome, Student!</h2>
+        <p class="text-gray-600">Here you can submit new feedback and track existing submissions.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="std_submit.html" class="block bg-teal-600 text-white p-6 rounded shadow hover:bg-teal-500">
+          <h3 class="text-xl font-bold mb-2">Submit Feedback</h3>
+          <p>Create a new feedback entry.</p>
+        </a>
+        <a href="std_history.html" class="block bg-indigo-900 text-white p-6 rounded shadow hover:bg-indigo-800">
+          <h3 class="text-xl font-bold mb-2">View History</h3>
+          <p>Review status of your past submissions.</p>
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="row-start-3 row-end-4 bg-gray-100 text-center text-sm text-gray-600 rounded shadow">
+    &copy; 2025 University Name.
+  </footer>
+
+  <!-- JS to preview selected avatar -->
+  <script>
+    function previewAvatar(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const img = document.getElementById('avatar-img');
+      img.src = URL.createObjectURL(file);
+      img.classList.remove('hidden');
+    }
+  </script>
+
+</body>
+
+</html>

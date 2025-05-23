@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Feedback – Submit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-roboto min-h-screen grid grid-rows-[auto_1fr_auto]">
+
+  <header class="row-start-1 row-end-2 shadow p-4 grid-cols-2 bg-white rounded shadow">
+    <h1 class="text-xl font-bold text-indigo-900">Submit Feedback</h1>
+  </header>
+
+  <div class="row-start-2 row-end-3 grid md:grid-cols-[1fr_3fr] gap-6 p-6">
+    <!-- Sidebar -->
+    <aside class="col-start-1 bg-white rounded shadow p-4 hidden md:block">
+      <nav class="gap-4">
+        <a href="std_dashboard.html" class="block p-2 rounded hover:bg-gray-100">Home</a>
+        <a href="std_submit.html" class="block p-2 rounded hover:bg-gray-100">Submit Feedback</a>
+        <a href="std_history.html" class="block p-2 rounded hover:bg-gray-100">My History</a>
+        <a href="#" class="block p-2 rounded hover:bg-gray-100">Settings</a>
+        <a href="landing.html" class="block p-2 hover:bg-gray-100">Logout</a>
+      </nav>
+    </aside>
+    <!-- Main -->
+    <main class="grid gap-4">
+      <div class="bg-white rounded shadow p-6">
+        <h2 class="text-2xl font-semibold text-indigo-900 mb-4">Submit Feedback</h2>
+        <form class="grid gap-4">
+          <div>
+            <label for="title" class="block text-gray-700">Title</label>
+            <input type="text" id="title" name="title" class="mt-1 block w-full border-gray-300 rounded p-2" required />
+          </div>
+          <div>
+            <label for="details" class="block text-gray-700">Details</label>
+            <textarea id="details" name="details" rows="4" class="mt-1 block w-full border-gray-300 rounded p-2"
+              required></textarea>
+          </div>
+          <div>
+            <label for="attachment" class="block text-gray-700">Attachment</label>
+            <input type="file" id="attachment" name="attachment" class="mt-1 block w-full text-gray-600" />
+          </div>
+          <button type="submit" class="px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-500">Submit</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+
+  <footer class="row-start-3 row-end-4 bg-gray-100 text-center text-sm text-gray-600 rounded shadow">
+    &copy; 2025 University Name.
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Feedback – History</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-roboto min-h-screen grid grid-rows-[auto_1fr_auto]">
+
+  <header class="row-start-1 row-end-2 shadow p-4 grid-cols-2 bg-white rounded shadow">
+    <h1 class="text-xl font-bold text-indigo-900">My History</h1>
+  </header>
+  <div class="row-start-2 row-end-3 grid md:grid-cols-[1fr_3fr] gap-6 p-6">
+    <!-- Sidebar -->
+    <aside class="col-start-1 bg-white rounded shadow p-4 hidden md:block">
+      <nav class="gap-4">
+        <a href="std_dashboard.html" class="block p-2 rounded hover:bg-gray-100">Home</a>
+        <a href="std_submit.html" class="block p-2 rounded hover:bg-gray-100">Submit Feedback</a>
+        <a href="std_history.html" class="block p-2 rounded hover:bg-gray-100">My History</a>
+        <a href="#" class="block p-2 rounded hover:bg-gray-100">Settings</a>
+        <a href="landing.html" class="block p-2 hover:bg-gray-100">Logout</a>
+      </nav>
+    </aside>
+    <!-- Main -->
+    <main class="grid gap-4">
+      <div class="bg-white rounded shadow p-6 space-y-4">
+        <!-- Repeat this card for each entry -->
+        <div class="grid grid-cols-[1fr_auto] items-center border rounded p-4">
+          <div>
+            <h3 class="text-lg font-medium">Issue with Library Wi‑Fi</h3>
+            <p class="text-sm text-gray-500">Submitted on May 10, 2025</p>
+          </div>
+          <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded">Under Review</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="row-start-3 row-end-4 bg-gray-100 text-center text-sm text-gray-600 rounded shadow">
+    &copy; 2025 University Name.
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>University Feedback – Auth</title>
+  <script src="https://cdn.tailwindcss.com"></script><!--tailwind is used for css-->
+</head>
+
+<body class="bg-gray-100 font-roboto min-h-screen grid grid-rows-[auto_1fr_auto]">
+
+  <!-- Header (row 1) -->
+  <header class="row-start-1 row-end-2 bg-white shadow p-4 items-center">
+    <h1 class="text-xl font-bold text-indigo-900">University Feedback</h1>
+  </header>
+
+  <main
+    class="row-start-2 row-end-3 grid place-items-center gap-8 p-8">
+    <!-- Login -->
+    <section id="login" class="bg-white shadow rounded p-6 w-full md:w-1/2">
+      <h2 class="text-2xl font-semibold mb-4">Login</h2>
+      <form onsubmit="return validateForm()" class="grid gap-4">
+        <div>
+          <label for="login-username" class="block text-gray-700">Username</label>
+          <input type="text" id="login-username" class="mt-1 block w-full border-gray-300 rounded p-2" required />
+        </div>
+        <div>
+          <label for="login-password" class="block text-gray-700">Password</label>
+          <input type="password" id="login-password" class="mt-1 block w-full border-gray-300 rounded p-2" required />
+        </div>
+        <button type="submit" class="w-full px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-500">Login</button>
+        <p class="text-sm text-gray-500 mt-2">Forgot your password? <a href="reset.html"
+            class="text-teal-600 hover:underline">Reset here</a>.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="row-start-3 row-end-4 p-4 text-center text-sm text-gray-600">
+    &copy; 2025 University Name. <a href="#" class="hover:underline">Privacy Policy</a>
+  </footer>
+
+  <!-- Validation Script -->
+  <script>
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   const loginForm = document.querySelector('#login form');
+    //   loginForm.addEventListener('submit', function (e) {
+    //     // If any required field is invalid, prevent submission and show default validation UI
+    //     if (!loginForm.checkValidity()) {
+    //       e.preventDefault();
+    //       loginForm.reportValidity();
+    //     }
+    //   });
+    // });
+
+    function validateForm() {
+      const userEl = document.getElementById('login-username');
+      const pwdEl = document.getElementById('login-password');
+      const user = userEl.value.trim();
+      const pwd = pwdEl.value.trim();
+      const passwordPattern = /^(?=.{8,}$)(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9]).*$/;
+
+      // Basic empty checks
+      if (!user) {
+        alert('Please enter your email.');
+        userEl.focus();
+        return false;
+      }
+      if (!pwd) {
+        alert('Please enter your password.');
+        pwdEl.focus();
+        return false;
+      }
+
+      if (!passwordPattern.test(pwd)) {
+        alert('Please enter a valid password.');
+        pwdEl.focus();
+        return false;
+      }
+
+      if (user.toLowerCase() == 'user' && pwd == 'User@123') {
+        window.location.href = 'std_dashboard.html';
+        return false;
+      }
+
+      if (user.toLowerCase() == 'admin' && pwd == 'Admin@123') {
+        window.location.href = 'admin_dashboard.html';
+        return false;
+      }
+
+
+      // All good
+      return true;
+    }
+
+  </script>
+
+</body>
+
+</html>
