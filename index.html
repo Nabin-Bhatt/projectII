@@ -5,6 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>University Feedback – Landing</title>
+
+  <!-- 1. Preconnect for fastest DNS/TCP/TLS setup -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+  <!-- 2. Preload the Tailwind script so the browser fetches it ASAP -->
+  <link rel="preload" as="script" href="https://cdn.tailwindcss.com">
+
+  <!-- 3. Load Tailwind *synchronously* so its CSS is injected before first paint -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -13,9 +21,9 @@
     <h1 class="text-4xl font-bold mb-4">Welcome to University Feedback</h1>
     <p class="mb-6 text-lg">Submit, track, and resolve feedback seamlessly—help us improve your campus experience.</p>
     <div class="space-x-4">
-      <a href="auth_login.html"
+      <a href="{{url_for('login')}}"
         class="px-6 py-3 border-2 border-white rounded hover:bg-white hover:text-indigo-900">Login</a>
-      <a href="auth_register.html"
+      <a href="{{url_for('signup')}}"
         class="px-6 py-3 border-2 border-white rounded hover:bg-white hover:text-indigo-900">Register</a>
     </div>
   </div>
